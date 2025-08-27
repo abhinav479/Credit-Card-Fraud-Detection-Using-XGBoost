@@ -1,51 +1,59 @@
-***
-
-# Credit Card Fraud Detection using XGBoost and Other Models
+# Credit Card Fraud Detection Using Machine Learning
 
 ## Project Overview
-This project aims to build an accurate and robust model to detect fraudulent credit card transactions. The dataset is highly imbalanced, requiring careful preprocessing, feature engineering, and model tuning to achieve good precision and recall on the minority fraud class.
+This project focuses on developing a robust machine learning model to detect fraudulent credit card transactions from a highly imbalanced dataset. The goal is to accurately identify fraudulent transactions while minimizing false positives, using advanced preprocessing and diverse classification models.
 
 ***
 
-## Project Motivation
-Fraudulent transactions cause significant financial and reputational losses. Early and accurate detection helps banks reduce fraud impact and protect customers. Machine learning offers scalable and data-driven detection.
+## Libraries and Tools Used
+
+- **Python 3.x** — core programming language  
+- **Pandas** — data manipulation and analysis  
+- **NumPy** — numerical operations  
+- **Matplotlib & Seaborn** — data visualization  
+- **Scikit-learn** — machine learning utilities, model selection, metrics  
+- **Imbalanced-learn (imblearn)** — dealing with class imbalance using SMOTE  
+- **XGBoost** — gradient boosting library for high-performance classification  
+- **LightGBM** — fast, scalable gradient boosting framework  
+- **Optuna** — hyperparameter optimization framework for efficient tuning  
 
 ***
 
-## Data Preprocessing
-- **Data Cleaning:** Removed duplicates and irrelevant columns.
-- **Handling Missing Values:** Imputed or dropped missing entries as needed.
-- **Data Balancing:** Used SMOTE to create synthetic samples of the minority fraud class, improving model training balance.
-- **Dataset Split:** Original data split into train, validation and test sets with stratification to preserve class ratio.
+## Dataset Description
+- Dataset with over 250,000 credit card transactions with features mostly anonymized by PCA.
+- Highly imbalanced: only ~0.17% transactions are fraudulent.
+- Key features include anonymized V1–V28 PCA components, `Amount`, and `Time`.
+- Target variable is binary: 0 (non-fraud), 1 (fraud).
 
 ***
 
-## Exploratory Data Analysis (EDA)
-- Analyzed feature distributions and correlations.
-- Visualized imbalance in target class and feature importance signals.
+## Project Workflow
 
-***
+### Data Preprocessing
+- Removed duplicate records to ensure data quality.
+- Handled missing values if any.
+- Used **SMOTE** to oversample the minority fraud class, balancing the training data.
+- Split the dataset into train, validation, and test sets, preserving class distribution.
 
-## Models Trained
-- **XGBoost:** Gradient boosting with hyperparameter tuning and early stopping.
-- **Random Forest:** Ensemble model with default and tuned parameters.
-- **LightGBM:** Alternative boosting model benchmarked against XGBoost.
-- **Logistic Regression:** Baseline linear model for comparison.
+### Exploratory Data Analysis (EDA)
+- Examined class distribution and feature correlations.
+- Visualized feature statistics and imbalances.
 
-***
+### Models Trained
+- **XGBoost** — gradient boosted trees with hyperparameter tuning and early stopping.
+- **Random Forest** — ensemble decision trees, tuned for fraud detection.
+- **LightGBM** — gradient boosting with tuned parameters.
+- **Logistic Regression** — baseline linear model for comparison.
 
-## Hyperparameter Tuning
-- Used Optuna for efficient Bayesian optimization of XGBoost parameters.
-- Objective metric: Maximizing recall due to fraud detection priority.
-- Tuning parameters included `max_depth`, `min_child_weight`, `gamma`, `subsample`, `colsample_bytree`, `learning_rate`, and regularization terms.
-- Early stopping deployed to prevent overfitting during training.
+### Hyperparameter Tuning
+- Used **Optuna** for efficient Bayesian optimization of XGBoost hyperparameters.
+- Focused on **maximizing recall** to catch the highest fraud rate.
+- Tuned parameters like `max_depth`, `min_child_weight`, `gamma`, `subsample`, `colsample_bytree`, `learning_rate`, and regularization.
 
-***
-
-## Model Evaluation Metrics
-- **Precision, Recall, F1-score:** Evaluated per class, with focus on fraud class (minority).
-- **ROC-AUC:** Measures model's ability to rank transactions.
-- **PR-AUC:** Precision-recall curve AUC, preferred for imbalanced datasets.
+### Model Evaluation
+- Evaluated using precision, recall, and F1-score with emphasis on fraud class.
+- Also used ROC-AUC and PR-AUC for ranking capability and imbalanced data performance.
+- Compared all models side-by-side using these metrics.
 
 ***
 
@@ -62,17 +70,21 @@ Fraudulent transactions cause significant financial and reputational losses. Ear
 ***
 
 ## Key Conclusions
-- XGBoost with tuning performs best balancing recall and precision for fraud detection.
-- Random Forest shows strong precision but slightly lower recall.
-- Logistic Regression, despite high recall, has poor precision, generating many false positives.
-- PR-AUC and F1-score are more informative than accuracy due to heavy class imbalance.
+- XGBoost with tuning offers the best overall balance for fraud detection.
+- Random Forest shows high precision but lower recall compared to XGBoost.
+- Logistic Regression, while having high recall, is impractical due to many false positives.
+- PR-AUC is a better metric for this imbalanced use case than accuracy.
 
 ***
 
-## How to Run the Code
-- Preprocessing scripts prepare clean, balanced datasets.
-- Model training scripts utilize XGBoost’s train API with early stopping.
-- Optuna is used for hyperparameter tuning.
-- Evaluation scripts print classification metrics and curves.
+## How to Run
+- Preprocessing scripts to clean and balance the dataset.
+- Model training scripts using XGBoost with early stopping.
+- Optuna tuning for XGBoost.
+- Evaluation scripts printing detailed classification reports.
 
-***
+
+
+[6](https://pythongeeks.org/credit-card-fraud-detection-using-machine-learning/)
+[7](https://www.hyperlinkinfosystem.com/blog/credit-card-fraud-detection-with-machine-learning-in-python)
+[8](https://www.kaggle.com/code/naveenkumar20bps1137/credit-card-fraud-detection-scikit-learn-snap-ml)
