@@ -76,11 +76,3 @@ Fraudulent transactions cause significant financial and reputational losses. Ear
 - Evaluation scripts print classification metrics and curves.
 
 ***
-
-
-
-
-
-[8](https://github.com/anujonthemove/Python-Machine-Learning-Template)
-[9](https://github.com/catiaspsilva/README-template)
-[10](https://github.com/Python-templates/sklearn-project-template)
