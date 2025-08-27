@@ -61,11 +61,11 @@ This project focuses on developing a robust machine learning model to detect fra
 
 | Model               | Precision (Fraud) | Recall (Fraud) | F1-score (Fraud) | ROC-AUC | PR-AUC |
 |---------------------|-------------------|----------------|------------------|---------|--------|
-| XGBoost (Tuned)     | 0.52              | 0.82           | 0.64             | 0.95    | 0.805  |
-| XGBoost (Default)   | 0.50              | 0.80           | 0.62             | 0.95    | 0.803  |
-| Random Forest       | 0.93              | 0.75           | 0.83             | 0.94    | 0.81   |
-| LightGBM            | 0.33              | 0.80           | 0.47             | 0.95    | 0.77   |
-| Logistic Regression | 0.05              | 0.87           | 0.10             | 0.96    | 0.68   |
+| XGBoost (Tuned)     | 0.52              | 0.82           | 0.64             | 0.961600    | 0.813800 |
+| XGBoost (Default)   | 0.50              | 0.80           | 0.62             | 0.954400   |0.803100  |
+| Random Forest       | 0.93              | 0.75           | 0.83             | 0.943800    | 0.812100  |
+| LightGBM            | 0.33              | 0.80           | 0.47             | 0.950600   |0.775100   |
+| Logistic Regression | 0.05              | 0.87           | 0.10             | 0.964200  | 0.683100|
 
 ***
 
