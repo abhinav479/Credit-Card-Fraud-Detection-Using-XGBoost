@@ -83,8 +83,3 @@ This project focuses on developing a robust machine learning model to detect fra
 - Optuna tuning for XGBoost.
 - Evaluation scripts printing detailed classification reports.
 
-
-
-[6](https://pythongeeks.org/credit-card-fraud-detection-using-machine-learning/)
-[7](https://www.hyperlinkinfosystem.com/blog/credit-card-fraud-detection-with-machine-learning-in-python)
-[8](https://www.kaggle.com/code/naveenkumar20bps1137/credit-card-fraud-detection-scikit-learn-snap-ml)
