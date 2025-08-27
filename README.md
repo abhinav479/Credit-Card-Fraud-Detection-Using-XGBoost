@@ -1,0 +1,86 @@
+***
+
+# Credit Card Fraud Detection using XGBoost and Other Models
+
+## Project Overview
+This project aims to build an accurate and robust model to detect fraudulent credit card transactions. The dataset is highly imbalanced, requiring careful preprocessing, feature engineering, and model tuning to achieve good precision and recall on the minority fraud class.
+
+***
+
+## Project Motivation
+Fraudulent transactions cause significant financial and reputational losses. Early and accurate detection helps banks reduce fraud impact and protect customers. Machine learning offers scalable and data-driven detection.
+
+***
+
+## Data Preprocessing
+- **Data Cleaning:** Removed duplicates and irrelevant columns.
+- **Handling Missing Values:** Imputed or dropped missing entries as needed.
+- **Data Balancing:** Used SMOTE to create synthetic samples of the minority fraud class, improving model training balance.
+- **Dataset Split:** Original data split into train, validation and test sets with stratification to preserve class ratio.
+
+***
+
+## Exploratory Data Analysis (EDA)
+- Analyzed feature distributions and correlations.
+- Visualized imbalance in target class and feature importance signals.
+
+***
+
+## Models Trained
+- **XGBoost:** Gradient boosting with hyperparameter tuning and early stopping.
+- **Random Forest:** Ensemble model with default and tuned parameters.
+- **LightGBM:** Alternative boosting model benchmarked against XGBoost.
+- **Logistic Regression:** Baseline linear model for comparison.
+
+***
+
+## Hyperparameter Tuning
+- Used Optuna for efficient Bayesian optimization of XGBoost parameters.
+- Objective metric: Maximizing recall due to fraud detection priority.
+- Tuning parameters included `max_depth`, `min_child_weight`, `gamma`, `subsample`, `colsample_bytree`, `learning_rate`, and regularization terms.
+- Early stopping deployed to prevent overfitting during training.
+
+***
+
+## Model Evaluation Metrics
+- **Precision, Recall, F1-score:** Evaluated per class, with focus on fraud class (minority).
+- **ROC-AUC:** Measures model's ability to rank transactions.
+- **PR-AUC:** Precision-recall curve AUC, preferred for imbalanced datasets.
+
+***
+
+## Results Summary
+
+| Model               | Precision (Fraud) | Recall (Fraud) | F1-score (Fraud) | ROC-AUC | PR-AUC |
+|---------------------|-------------------|----------------|------------------|---------|--------|
+| XGBoost (Tuned)     | 0.52              | 0.82           | 0.64             | 0.95    | 0.805  |
+| XGBoost (Default)   | 0.50              | 0.80           | 0.62             | 0.95    | 0.803  |
+| Random Forest       | 0.93              | 0.75           | 0.83             | 0.94    | 0.81   |
+| LightGBM            | 0.33              | 0.80           | 0.47             | 0.95    | 0.77   |
+| Logistic Regression | 0.05              | 0.87           | 0.10             | 0.96    | 0.68   |
+
+***
+
+## Key Conclusions
+- XGBoost with tuning performs best balancing recall and precision for fraud detection.
+- Random Forest shows strong precision but slightly lower recall.
+- Logistic Regression, despite high recall, has poor precision, generating many false positives.
+- PR-AUC and F1-score are more informative than accuracy due to heavy class imbalance.
+
+***
+
+## How to Run the Code
+- Preprocessing scripts prepare clean, balanced datasets.
+- Model training scripts utilize XGBoost’s train API with early stopping.
+- Optuna is used for hyperparameter tuning.
+- Evaluation scripts print classification metrics and curves.
+
+***
+
+
+
+
+
+[8](https://github.com/anujonthemove/Python-Machine-Learning-Template)
+[9](https://github.com/catiaspsilva/README-template)
+[10](https://github.com/Python-templates/sklearn-project-template)
